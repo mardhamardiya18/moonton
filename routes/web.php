@@ -24,4 +24,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::get('admin', function () {
+    return 'haii admin';
+})->middleware('role:admin');
+
+Route::get('user', function () {
+    return 'haii user';
+})->middleware('role:user');
+
+require __DIR__ . '/auth.php';
