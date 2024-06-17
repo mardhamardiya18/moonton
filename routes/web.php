@@ -25,8 +25,7 @@ Route::prefix('/prototype')->name('prototype.')->group(function () {
     })->name('login');
 
     Route::get('/register', function () {
-        // return Inertia::render('Prototype/Login');
-        return 'register page';
+        return Inertia::render('Prototype/Register');
     })->name('register');
 });
 
