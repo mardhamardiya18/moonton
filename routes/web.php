@@ -19,10 +19,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('/prototype')->group(function () {
+Route::prefix('/prototype')->name('prototype.')->group(function () {
     Route::get('/login', function () {
         return Inertia::render('Prototype/Login');
-    });
+    })->name('login');
+
+    Route::get('/register', function () {
+        // return Inertia::render('Prototype/Login');
+        return 'register page';
+    })->name('register');
 });
 
 

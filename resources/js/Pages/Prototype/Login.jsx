@@ -1,4 +1,7 @@
 import TextInput from "@/Components/TextInput";
+import InputLabel from "@/Components/InputLabel";
+import PrimaryButton from "@/Components/PrimaryButton";
+import { Link } from "@inertiajs/react";
 
 export default function Login() {
     return (
@@ -22,28 +25,33 @@ export default function Login() {
                     <form className="w-[370px]">
                         <div className="flex flex-col gap-6">
                             <div>
-                                <label className="text-base block mb-2">Email Address</label>
+                                <InputLabel forInput="email" value="Email Address" />
                                 <TextInput type="email" name="email" placeholder="Email Address" isFocused={true} />
 
                             </div>
                             <div>
-                                <label className="text-base block mb-2">Password</label>
+                                <InputLabel forInput="password" value="Password" />
 
                                 <TextInput type="password" name="password"
                                     placeholder="Password" />
                             </div>
                         </div>
                         <div className="grid space-y-[14px] mt-[30px]">
-                            <a href="/" className="rounded-2xl bg-alerange py-[13px] text-center">
+
+                            <PrimaryButton type="button" variant="primary">
                                 <span className="text-base font-semibold">
                                     Start Watching
                                 </span>
-                            </a>
-                            <a href="sign_up.html" className="rounded-2xl border border-white py-[13px] text-center">
-                                <span className="text-base text-white">
-                                    Create New Account
-                                </span>
-                            </a>
+                            </PrimaryButton>
+
+                            <Link href={route('prototype.register')}>
+                                <PrimaryButton type="button" variant="light-outline">
+                                    <span className="text-base text-white">
+                                        Create New Account
+                                    </span>
+                                </PrimaryButton>
+                            </Link>
+
 
                         </div>
                     </form>

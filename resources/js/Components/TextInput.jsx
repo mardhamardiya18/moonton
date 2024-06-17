@@ -35,7 +35,7 @@ const TextInput = forwardRef(function TextInput({
 });
 
 TextInput.propTypes = {
-    type: PropTypes.oneOf(["text", "email", "number", "file"]),
+    type: PropTypes.oneOf(["text", "email", "number", "file", "password"]),
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
