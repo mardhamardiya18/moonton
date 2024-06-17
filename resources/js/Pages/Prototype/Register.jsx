@@ -54,11 +54,13 @@ const Register = () => {
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
-                                <PrimaryButton variant='primary'>
-                                    <span className="text-base font-semibold">
-                                        Sign Up
-                                    </span>
-                                </PrimaryButton>
+                                <Link href={route('prototype.dashboard')}>
+                                    <PrimaryButton variant='primary'>
+                                        <span className="text-base font-semibold">
+                                            Sign Up
+                                        </span>
+                                    </PrimaryButton>
+                                </Link>
 
                                 <Link href={route('prototype.login')}>
                                     <PrimaryButton type='button' variant='light-outline'>
