@@ -30,10 +30,19 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|lowercase|email|max:255|unique:' . User::class,
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ], [
+            'required' => 'The :attribute cannot be left empty.',
+            'unique'    => 'The :attribute is already in use. Try a different one.',
+            'max:255'   => 'The :attribute can have a maximum of 255 characters only.',
+            'string'   => 'The :attribute hould consist of valid characters only.',
+            'confirmed' => 'Please ensure The :attribute and its confirmation match',
+            'lowercase' => 'The :attribute must be in lowercase letters only.',
+            'email' => 'Please provide a valid email address for the :attribute field',
         ]);
 
         $user = User::create([
