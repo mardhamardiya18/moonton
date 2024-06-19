@@ -35,7 +35,7 @@ const Topbar = ({ name }) => {
                         ref={dropdownTarget}>
                         <a href="#!" className="transition-all hover:bg-sky-100 p-4">Dashboard</a>
                         <a href="#!" className="transition-all hover:bg-sky-100 p-4">Settings</a>
-                        <Link href={route('logout')} method="post" className="transition-all hover:bg-sky-100 p-4">Sign Out</Link>
+                        <Link href={route('logout')} method="post" as='button' className="transition-all hover:bg-sky-100 p-4">Sign Out</Link>
                     </div>
                 </div>
             </div>

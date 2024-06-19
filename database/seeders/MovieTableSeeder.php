@@ -20,6 +20,7 @@ class MovieTableSeeder extends Seeder
                 'category'  => 'Action',
                 'video_url' => 'https://youtu.be/dHXVvD4FFas?si=g7lj3CvBYsCPczQx',
                 'thumbnail' => 'https://wallpapercave.com/wp/KJPP508.jpg',
+                'is_featured'   => 1
             ],
             [
                 'name'      => 'World War II',
@@ -27,6 +28,7 @@ class MovieTableSeeder extends Seeder
                 'category'  => 'Action',
                 'video_url' => 'https://youtu.be/elvA3v51tLs?si=pae4E4h8ek7RzAxY',
                 'thumbnail' => 'https://wallpapercave.com/uwp/uwp3556224.jpeg',
+                'is_featured'   => 1
             ],
             [
                 'name'      => 'Transformer rise of the beasts',
@@ -34,6 +36,7 @@ class MovieTableSeeder extends Seeder
                 'category'  => 'Action',
                 'video_url' => 'https://youtu.be/U_-PaEjv21o?si=0wY3vg6z9LRLe1pS',
                 'thumbnail' => 'https://wallpapercave.com/uwp/uwp3846699.jpeg',
+                'is_featured'   => 0
             ],
         ];
 

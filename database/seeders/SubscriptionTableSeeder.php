@@ -18,13 +18,15 @@ class SubscriptionTableSeeder extends Seeder
                 'name'  => 'Basic',
                 'price' => 200000,
                 'active_periode_in_months' => 3,
-                'features' =>   json_encode(['Feature_1', 'Feature_2'])
+                'features' =>   json_encode(['Feature_1', 'Feature_2']),
+                'is_premium'    => 0
             ],
             [
                 'name'  => 'Premium',
                 'price' => 600000,
                 'active_periode_in_months' => 12,
-                'features' =>   json_encode(['Feature_1', 'Feature_2', 'Feature_3', 'Feature_4'])
+                'features' =>   json_encode(['Feature_1', 'Feature_2', 'Feature_3', 'Feature_4']),
+                'is_premium'    => 1
             ]
         ];
 

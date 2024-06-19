@@ -11,6 +11,6 @@ class SubscriptionPlans extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name', 'price', 'active_periode_in_months', 'features'
+        'name', 'price', 'active_periode_in_months', 'features', 'is_premium'
     ];
 }
