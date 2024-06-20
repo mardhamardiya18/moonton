@@ -1,8 +1,19 @@
 import React from 'react'
 import Index from '@/Layouts/Authenticated/Index'
 import SubscriptionCard from '@/Components/SubscriptionCard'
+import { router } from '@inertiajs/react'
+
 
 const Payment = ({ auth, subscriptions }) => {
+
+    const selectSubscription = (id) => {
+        router.post(
+            route("user.dashboard.subscriptionPlan.userSubscribe", {
+                subscriptionPlans: id,
+            }))
+
+    }
+
     return (
         <Index user={auth.user}>
             <div className=" flex flex-col items-center">
@@ -22,8 +33,9 @@ const Payment = ({ auth, subscriptions }) => {
                                 price={subscription.price}
                                 duration={subscription.active_periode_in_months}
                                 features={JSON.parse(subscription.features)}
-                                isPremium={subscription.is_premium}
+                                isPremium={subscription.name === 'Premium'}
                                 key={subscription.id}
+                                onSelectSubscription={() => selectSubscription(subscription.id)}
                             />
                         ))
                     }

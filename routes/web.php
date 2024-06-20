@@ -16,6 +16,7 @@ Route::middleware(['auth', 'role:user'])->name('user.dashboard.')->prefix('dashb
     Route::get('/', [DashboardController::class, 'index'])->name('index');
     Route::get('/movie/{movie:slug}', [MovieController::class, 'show'])->name('movie.show');
     Route::get('/subscription-plan', [SubscriptionController::class, 'index'])->name('subscription.index');
+    Route::post('subscription-plan/{subscriptionPlans}/user-subscribe', [SubscriptionController::class, 'userSubscribe'])->name('subscriptionPlan.userSubscribe');
 });
 
 Route::middleware('auth')->group(function () {
