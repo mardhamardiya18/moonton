@@ -17,7 +17,7 @@ const Dashboard = ({ auth, featureMovies, movies }) => {
     }
 
     return (
-        <Index user={auth.user}>
+        <Index auth={auth}>
             <Head>
                 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
                 <title>Dashboard</title>

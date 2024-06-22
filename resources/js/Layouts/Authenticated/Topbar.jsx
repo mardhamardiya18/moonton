@@ -2,7 +2,7 @@ import { Link } from '@inertiajs/react'
 import React, { useState, useRef } from 'react'
 
 
-const Topbar = ({ name }) => {
+const Topbar = ({ auth }) => {
     const [dropdown, setdropdown] = useState(true)
 
     const dropdownTarget = useRef()
@@ -23,7 +23,7 @@ const Topbar = ({ name }) => {
             <input type="text" className="top-search" placeholder="Search movie, cast, genre"
             />
             <div className="flex items-center gap-4">
-                <span className="text-black text-sm font-medium">Welcome, {name}</span>
+                <span className="text-black text-sm font-medium">Welcome, {auth.user.name}</span>
 
                 <div className="collapsible-dropdown flex flex-col gap-2 relative">
                     <div

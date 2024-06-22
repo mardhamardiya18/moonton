@@ -15,7 +15,7 @@ const Payment = ({ auth, subscriptions }) => {
     }
 
     return (
-        <Index user={auth.user}>
+        <Index auth={auth}>
             <div className=" flex flex-col items-center">
                 <div className="text-black font-semibold text-[26px] mb-3">
                     Pricing for Everyone

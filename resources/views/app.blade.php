@@ -13,8 +13,7 @@
     </style>
 
 
-    <!-- Scripts -->
-    <script src="assets/script/tailwind-config.js"></script>
+
 
 
 

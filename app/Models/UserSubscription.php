@@ -19,6 +19,10 @@ class UserSubscription extends Model
         'snap_token'
     ];
 
+    protected $dates = [
+        'expired_date' // Misalkan expired_date adalah salah satu kolom di model ini
+    ];
+
     public function subscriptionPlan()
     {
         return $this->belongsTo(SubscriptionPlans::class);
