@@ -2,7 +2,7 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import Topbar from './Topbar'
 
-const Index = ({ auth, children }) => {
+const Main = ({ auth, children }) => {
     return (
         <>
             <div className="mx-auto max-w-screen hidden lg:block">
@@ -34,4 +34,4 @@ const Index = ({ auth, children }) => {
     )
 }
 
-export default Index
+export default Main

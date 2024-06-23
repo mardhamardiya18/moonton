@@ -1,9 +1,9 @@
 import React from 'react'
-import Index from '@/Layouts/Authenticated/Index'
 import Flickity from 'react-flickity-component'
 import { Head } from '@inertiajs/react'
 import FeatureMovie from '@/Components/FeatureMovie'
 import MovieCard from '@/Components/MovieCard'
+import Main from '@/Layouts/Authenticated/Main'
 
 const Dashboard = ({ auth, featureMovies, movies }) => {
     const flickityOptions = {
@@ -17,7 +17,7 @@ const Dashboard = ({ auth, featureMovies, movies }) => {
     }
 
     return (
-        <Index auth={auth}>
+        <Main auth={auth}>
             <Head>
                 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
                 <title>Dashboard</title>
@@ -58,7 +58,7 @@ const Dashboard = ({ auth, featureMovies, movies }) => {
                 </Flickity>
             </div>
 
-        </Index>
+        </Main>
     )
 }
 
