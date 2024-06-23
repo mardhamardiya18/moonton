@@ -49,6 +49,7 @@ const Create = ({ auth }) => {
                     isError={errors.name}
                 />
                 <InputError message={errors.name} className="mt-2" />
+
                 <InputLabel
                     forInput="category"
                     value="Category"
