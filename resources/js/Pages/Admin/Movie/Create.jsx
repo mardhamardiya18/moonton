@@ -14,7 +14,7 @@ const Create = ({ auth }) => {
         video_url: "",
         thumbnail: "",
         rating: "",
-        is_featured: "false",
+        is_featured: false,
     });
 
     const onHandleChange = (event) => {

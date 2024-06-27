@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 
@@ -60,6 +61,10 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
                 'activePlan' => $this->activePlan(),
+            ],
+            'flashMessage' => [
+                'message'   => $request->session()->get('message'),
+                'type'      => Session::get('type')
             ],
             'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),

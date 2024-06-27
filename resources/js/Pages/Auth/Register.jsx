@@ -19,6 +19,10 @@ const Register = () => {
         };
     }, []);
 
+    const onHandleChange = (event) => {
+        setData(event.target.name, event.target.value);
+    };
+
     const submit = (e) => {
         e.preventDefault();
 
@@ -58,7 +62,7 @@ const Register = () => {
                                         value={data.name}
                                         placeholder="Your fullname..."
                                         isFocused={true}
-                                        onChange={(e) => setData('name', e.target.value)}
+                                        handleChange={onHandleChange}
                                         required
                                     />
 
@@ -71,7 +75,7 @@ const Register = () => {
                                         name="email"
                                         value={data.email}
                                         placeholder="Your Email Address"
-                                        onChange={(e) => setData('email', e.target.value)}
+                                        handleChange={onHandleChange}
                                         required
                                     />
 
@@ -84,7 +88,7 @@ const Register = () => {
                                         name="password"
                                         value={data.password}
                                         placeholder="Your Password"
-                                        onChange={(e) => setData('password', e.target.value)}
+                                        handleChange={onHandleChange}
                                         required
                                     />
 
@@ -97,7 +101,7 @@ const Register = () => {
                                         name="password_confirmation"
                                         value={data.password_confirmation}
                                         placeholder="Confirm Password"
-                                        onChange={(e) => setData('password_confirmation', e.target.value)}
+                                        handleChange={onHandleChange}
                                         required
                                     />
 

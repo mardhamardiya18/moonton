@@ -1,6 +1,6 @@
 export default function Checkbox({
     name,
-    value,
+    value = 0,
     handleChange,
     checked = false, }) {
     return (

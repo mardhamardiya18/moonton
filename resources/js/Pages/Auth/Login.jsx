@@ -18,6 +18,10 @@ export default function Login() {
         };
     }, []);
 
+    const onHandleChange = (event) => {
+        setData(event.target.name, event.target.value);
+    };
+
     const submit = (e) => {
         e.preventDefault();
 
@@ -54,7 +58,7 @@ export default function Login() {
                                         name="email"
                                         placeholder="Email Address"
                                         isFocused={true}
-                                        onChange={(e) => setData('email', e.target.value)}
+                                        handleChange={onHandleChange}
                                     />
 
                                     <InputError message={errors.email} className="mt-2" />
@@ -67,7 +71,7 @@ export default function Login() {
                                         type="password"
                                         name="password"
                                         placeholder="Password"
-                                        onChange={(e) => setData('password', e.target.value)}
+                                        handleChange={onHandleChange}
                                     />
 
                                     <InputError message={errors.password} className="mt-2" />
