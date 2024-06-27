@@ -1,10 +1,12 @@
 import React from 'react'
 import Main from '@/Layouts/Authenticated/Main'
 import PrimaryButton from '@/Components/PrimaryButton'
-import { Head, Link } from '@inertiajs/react'
+import { Head, Link, useForm } from '@inertiajs/react'
 import FlashMessage from '@/Components/FlashMessage'
 
 const Index = ({ auth, flashMessage, movies }) => {
+    const { delete: destroy } = useForm();
+
     return (
         <Main auth={auth}>
             <Head title="List of Movie" />
@@ -58,28 +60,19 @@ const Index = ({ auth, flashMessage, movies }) => {
                             <td>
                                 <div
                                     onClick={() => {
-                                        movie.deleted_at
-                                            ? put(
-                                                route(
-                                                    "admin.dashboard.movie.restore",
-                                                    movie.id
-                                                )
-                                            )
-                                            : destroy(
-                                                route(
-                                                    "admin.dashboard.movie.destroy",
-                                                    movie.id
-                                                )
-                                            );
+
+                                        destroy(route(
+                                            "admin.dashboard.movie.destroy",
+                                            movie.id
+                                        ))
+
                                     }}
                                 >
                                     <PrimaryButton
                                         type="button"
                                         variant="danger"
                                     >
-                                        {movie.deleted_at
-                                            ? "Restore"
-                                            : "Delete"}
+                                        Delete
                                     </PrimaryButton>
                                 </div>
                             </td>
