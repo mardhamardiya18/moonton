@@ -11,7 +11,7 @@
 
 Moonton is a project to build a streaming movie platform like Netflix which uses the latest version of the Tech Stack, such as:
 
--   Back-End: using laravel version 9.
+-   Back-End: using laravel version 11.
 -   Front-End: using React.js
 -   CSS Framework: Tailwind
 -   Authentication: Laravel Breeze
