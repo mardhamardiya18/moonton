@@ -1,21 +1,51 @@
 import React from 'react'
-import Index from '@/Layouts/Authenticated/Index'
+import Main from '@/Layouts/Authenticated/Main'
 import SubscriptionCard from '@/Components/SubscriptionCard'
-import { router } from '@inertiajs/react'
+import { Head, router } from '@inertiajs/react'
 
 
-const Payment = ({ auth, subscriptions }) => {
+const Payment = ({ auth, subscriptions, env }) => {
 
     const selectSubscription = (id) => {
         router.post(
             route("user.dashboard.subscriptionPlan.userSubscribe", {
                 subscriptionPlans: id,
-            }))
+            }),
+            {},
+            {
+                only: ["userSubscription"],
+                onSuccess: ({ props }) => {
+                    console.log(props)
+                    onSnapMidtrans(props.userSubscription)
+                }
+
+            }
+        )
+
+        const onSnapMidtrans = (userSubscription) => {
+            snap.pay(userSubscription.snap_token, {
+                // Optional
+                onSuccess: function (result) {
+                    console.log({ result })
+                },
+                // Optional
+                onPending: function (result) {
+                    console.log({ result })
+                },
+                // Optional
+                onError: function (result) {
+                    console.log({ result })
+                }
+            });
+        }
 
     }
 
     return (
-        <Index auth={auth}>
+        <Main auth={auth}>
+            <Head title='Subscription Plan'>
+                <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key={env.MIDTRANS_CLIENTKEY}></script>
+            </Head>
             <div className=" flex flex-col items-center">
                 <div className="text-black font-semibold text-[26px] mb-3">
                     Pricing for Everyone
@@ -45,7 +75,7 @@ const Payment = ({ auth, subscriptions }) => {
                 </div>
 
             </div>
-        </Index>
+        </Main>
     )
 }
 
