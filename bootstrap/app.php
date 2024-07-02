@@ -25,6 +25,10 @@ return Application::configure(basePath: dirname(__DIR__))
             'check_user'    =>  \App\Http\Middleware\CheckUserSubscription::class
         ]);
 
+        $middleware->validateCsrfTokens(except: [
+            'midtrans/notification'
+        ]);
+
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {

@@ -14,6 +14,8 @@ use Inertia\Inertia;
 
 Route::redirect('/', '/login');
 
+Route::post('midtrans/notification', [SubscriptionController::class, 'midtransCallback']);
+
 Route::middleware(['auth', 'role:user'])->name('user.dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
     Route::get('/movie/{movie:slug}', [MovieController::class, 'show'])->name('movie.show')->middleware('check_user:true');
