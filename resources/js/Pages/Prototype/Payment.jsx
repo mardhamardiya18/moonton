@@ -1,10 +1,10 @@
 import React from 'react'
-import Index from '@/Layouts/Authenticated/Index'
+import Main from '@/Layouts/Authenticated/Main'
 import SubscriptionCard from '@/Components/SubscriptionCard'
 
 const Payment = () => {
     return (
-        <Index>
+        <Main>
             <div className="py-20 flex flex-col items-center">
                 <div className="text-black font-semibold text-[26px] mb-3">
                     Pricing for Everyone
@@ -23,7 +23,7 @@ const Payment = () => {
                 </div>
 
             </div>
-        </Index>
+        </Main>
     )
 }
 

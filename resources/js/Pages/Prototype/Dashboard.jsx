@@ -1,5 +1,5 @@
 import React from 'react'
-import Index from '@/Layouts/Authenticated/Index'
+import Main from '@/Layouts/Authenticated/Main'
 import Flickity from 'react-flickity-component'
 import { Head } from '@inertiajs/react'
 import FeatureMovie from '@/Components/FeatureMovie'
@@ -17,7 +17,7 @@ const Dashboard = () => {
     }
 
     return (
-        <Index>
+        <Main>
             <Head>
                 <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
                 <title>Dashboard</title>
@@ -44,7 +44,7 @@ const Dashboard = () => {
                 </Flickity>
             </div>
 
-        </Index>
+        </Main>
     )
 }
 
